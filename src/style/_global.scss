@@ -1,0 +1,18 @@
+@import "variables";
+
+.out, nav, footer, main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: $page-width;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
