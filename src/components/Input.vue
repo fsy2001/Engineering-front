@@ -10,6 +10,7 @@
           @focusout="focus = false; $emit('check')"
           @input="$emit('input', $event.target.value)"
           v-model="value" />
+      <slot></slot>
     </div>
     <span class="input-error-msg">{{ (valid || focus) ? '' : config.errorMsg}}</span>
   </div>
@@ -40,8 +41,11 @@ $input-error-background: rgb(254, 240, 240);
 .input-box {
   border: 1px solid rgb(214, 214, 214);
   border-radius: 6px;
+  background-color: white;
   padding: 15px;
   margin: 6px 0 0 0;
+  display: flex;
+  justify-content: space-between;
 
   input {
     background: none;

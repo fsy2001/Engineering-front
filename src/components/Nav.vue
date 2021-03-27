@@ -2,7 +2,7 @@
   <nav>
     <div class="container nav-list">
       <div class="nav-item">
-        <a>首页</a>
+        <router-link to="/" class="nav-link">首页</router-link>
       </div>
 
       <div class="nav-item">
@@ -10,7 +10,7 @@
       </div>
 
       <div class="nav-item">
-        <a>搜索</a>
+        <router-link to="/search"  class="nav-link">搜索</router-link>
       </div>
 
       <div class="nav-item">
@@ -53,5 +53,15 @@ nav {
 
 .nav-item-disable {
   color: $nav-text-disable;
+}
+
+.nav-link {
+  color: $nav-text;
+  font-size: $nav-font-size;
+  text-decoration: none;
+
+  &:hover {
+    color: $nav-text-hover;
+  }
 }
 </style>

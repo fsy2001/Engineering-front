@@ -16,7 +16,6 @@ import Foot from "@/components/Foot";
 export default {
   name: 'Home',
   components: {Foot, Nav},
-
 }
 </script>
 
