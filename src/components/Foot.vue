@@ -3,7 +3,7 @@
     <div class="container foot-content">
       <div class="foot-description foot-section">
       <span class="foot-contacts">
-        联系我们：致电 4008-123-123。地址：上海市杨浦区邯郸路。
+        联系我们：(021) 5566 4282。地址：上海市邯郸路220号 200433。
       </span>
       </div>
 
