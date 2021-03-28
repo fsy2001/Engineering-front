@@ -4,15 +4,15 @@
       'input-box': valid || focus,
       'input-box-error': !valid && !focus }">
       <input
-          type="text"
+          :type="config.password ? 'password' : 'input'"
           :placeholder="config.placeholder"
           @focusin="focus = true"
           @focusout="focus = false; $emit('check')"
           @input="$emit('input', $event.target.value)"
-          v-model="value" />
+          v-model="value"/>
       <slot></slot>
     </div>
-    <span class="input-error-msg">{{ (valid || focus) ? '' : config.errorMsg}}</span>
+    <span class="input-error-msg">{{ (valid || focus) ? '' : config.errorMsg }}</span>
   </div>
 </template>
 
@@ -20,7 +20,7 @@
 export default {
   name: "Input",
   props: [
-      'config', 'valid', 'value'
+    'config', 'valid', 'value'
   ],
   data: function () {
     return {
@@ -72,6 +72,6 @@ $input-error-background: rgb(254, 240, 240);
 
 .input-error-msg {
   color: $input-error;
-  font-size: 3px;
+  font-size: 10px;
 }
 </style>

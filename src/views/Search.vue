@@ -1,48 +1,48 @@
 <template>
-<div class="search">
-  <Nav></Nav>
-  <main class="search-background">
-    <div class="container search-panel">
-      <div class="search-area">
-        <div class="search-title">
-          <h1>馆藏资源检索</h1>
-        </div>
-        <Input
-            :config="{ placeholder: '输入图书标题',
+  <div class="search">
+    <Nav></Nav>
+    <main class="search-background">
+      <div class="container search-panel">
+        <div class="search-area">
+          <div class="search-title">
+            <h1>馆藏资源检索</h1>
+          </div>
+          <Input
+              :config="{ placeholder: '输入图书标题',
                       errorMsg: '',
                       }"
-            :valid="true"
-            v-model="queryString">
+              :valid="true"
+              v-model="queryString">
           <span class="search-action"
                 @click="searchBook">
             搜索
           </span>
-        </Input>
-        <div class="search-options">
-          高级搜索
+          </Input>
+          <div class="search-options">
+            高级搜索
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-  <main>
-    <div class="container search-result-panel">
-      <div class="search-result-title">
-        搜索结果
+    </main>
+    <main>
+      <div class="container search-result-panel">
+        <div class="search-result-title">
+          搜索结果
+        </div>
+        <div class="search-result-alert" v-if="searchResults.length === 0">
+          没有匹配的图书。
+        </div>
+        <div v-else>
+          <BookEntry
+              v-for="(item, index) in searchResults"
+              :key="index"
+              :config="item">
+          </BookEntry>
+        </div>
       </div>
-      <div class="search-result-alert" v-if="searchResults.length === 0">
-        没有匹配的图书。
-      </div>
-      <div v-else>
-        <BookEntry
-            v-for="(item, index) in searchResults"
-            :key="index"
-            :config="item">
-        </BookEntry>
-      </div>
-    </div>
-  </main>
-  <Foot></Foot>
-</div>
+    </main>
+    <Foot></Foot>
+  </div>
 </template>
 
 <script>
@@ -59,9 +59,7 @@ export default {
     return {
       advanced: false,
       queryString: '',
-      searchResults: [
-
-      ]
+      searchResults: []
     }
   },
   methods: {
@@ -73,17 +71,17 @@ export default {
       fetch('/api/book/search?' + new URLSearchParams({
         title: this.queryString
       }))
-      .then(response => {
-        if (response.ok)
-          return response
-        const error = new Error(response.statusText)
-        error.response = response
-        throw error
-      })
-      .then(res => res.json())
-      .then(data => {
-        this.searchResults = data
-      })
+          .then(response => {
+            if (response.ok)
+              return response
+            const error = new Error(response.statusText)
+            error.response = response
+            throw error
+          })
+          .then(res => res.json())
+          .then(data => {
+            this.searchResults = data
+          })
     }
   }
 }

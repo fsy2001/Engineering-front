@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 $entry-width: 600px;
 $entry-title-size: 30px;
 
