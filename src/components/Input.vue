@@ -31,16 +31,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$input-error: rgb(222, 7, 28);
-$input-error-background: rgb(254, 240, 240);
+@import "src/style/global";
+
+
+
 
 .input-container {
   width: 100%;
 }
 
 .input-box {
-  border: 1px solid rgb(214, 214, 214);
-  border-radius: 6px;
+  border: $input-border;
+  border-radius: $input-border-radius;
   background-color: white;
   padding: 15px;
   margin: 6px 0 0 0;
@@ -50,12 +52,12 @@ $input-error-background: rgb(254, 240, 240);
   input {
     background: none;
     border: none;
-    color: #353535;
-    font-size: 17px;
+    color: $input-text-color;
+    font-size: $input-font-size;
     outline: none;
 
     &::placeholder {
-      color: rgb(155, 155, 155);
+      color: $input-placeholder-color;
     }
   }
 }

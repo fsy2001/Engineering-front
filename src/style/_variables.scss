@@ -21,6 +21,10 @@ $footer-text: #86868b;
 
 
 // input
-$input-border: 0;
-$input-border-width: 0;
-$input-border-radius: 0;
+$input-border: 1px solid rgb(214, 214, 214);
+$input-border-radius: 7px;
+$input-font-size: 17px;
+$input-text-color: #353535;
+$input-placeholder-color: rgb(155, 155, 155);
+$input-error: rgb(222, 7, 28);
+$input-error-background: rgb(254, 240, 240);
