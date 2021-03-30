@@ -33,9 +33,6 @@ export default {
 <style scoped lang="scss">
 @import "src/style/global";
 
-
-
-
 .input-container {
   width: 100%;
 }

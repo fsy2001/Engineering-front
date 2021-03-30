@@ -62,6 +62,19 @@ export default {
       searchResults: []
     }
   },
+  mounted() {
+    fetch('/api/book/getAll')
+    .then(res => {
+      if (res.ok)
+        return res
+      alert('网络错误')
+      throw new Error()
+    })
+    .then(res => res.json())
+    .then(data => {
+      this.searchResults = data
+    })
+  },
   methods: {
     searchBook: function () {
       if (this.queryString === '') {

@@ -5,6 +5,7 @@ import Search from "@/views/Search";
 import Register from "@/views/Register";
 import Login from "@/views/Login";
 import UserCenter from "@/views/UserCenter";
+import AddBook from "@/views/AddBook";
 
 Vue.use(VueRouter)
 
@@ -37,13 +38,16 @@ const routes = [
         name: 'User',
         component: UserCenter,
         meta: {
-            // requiresAuth: true
+            requiresAuth: true
         }
     },
     {
         path: '/manage/add',
         name: 'AddBook',
-
+        component: AddBook,
+        mata: {
+            requiresAuth: true
+        }
     }
 ]
 
