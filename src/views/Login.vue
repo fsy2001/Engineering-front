@@ -42,6 +42,7 @@
 <script>
 import Nav from "@/components/Nav";
 import Foot from "@/components/Foot";
+import router from "@/router";
 
 export default {
   name: "Login",
@@ -72,8 +73,9 @@ export default {
           .then(res => res.json())
           .then(data => {
             const user = data.user
-            console.log(user)
-            // TODO: save info to storage
+            localStorage.userLogin = true
+            localStorage.userInfo = JSON.stringify(user)
+            router.push('/')
           })
           .catch(error => {
             alert(error.message)

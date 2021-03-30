@@ -18,7 +18,7 @@
       </div>
 
       <div class="nav-item">
-        <a>用户中心</a>
+        <router-link to="/user" class="nav-link">个人中心</router-link>
       </div>
     </div>
   </nav>
