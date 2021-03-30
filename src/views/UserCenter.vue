@@ -36,7 +36,7 @@
         </p>
       </div>
 
-      <button @click="logout"}>登出</button>
+      <button @click="logout">登出</button>
 
       <div class="user-subtitle" v-if="user.role === 'LIBRARIAN'">
         <h2>管理功能</h2>
