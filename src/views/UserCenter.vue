@@ -80,7 +80,12 @@ name: "UserCenter",
       else return '不确定'
     },
     logout: function () {
-
+      fetch('/logout', {
+        method: 'POST'
+      })
+      localStorage.removeItem('userLogin')
+      localStorage.removeItem('userInfo')
+      router.push('/home')
     }
   },
   mounted() { // load user info at the beginning
