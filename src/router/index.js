@@ -45,9 +45,9 @@ const routes = [
         path: '/manage/add',
         name: 'AddBook',
         component: AddBook,
-        mata: {
-            requiresAuth: true
-        }
+        // mata: {
+        //     requiresAuth: true
+        // }
     }
 ]
 

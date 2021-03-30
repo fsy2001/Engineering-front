@@ -36,6 +36,8 @@
         </p>
       </div>
 
+      <button @click="logout"}>登出</button>
+
       <div class="user-subtitle" v-if="user.role === 'LIBRARIAN'">
         <h2>管理功能</h2>
       </div>
@@ -46,6 +48,7 @@
           添加图书
         </router-link>
       </div>
+
 
     </div>
   </main>
@@ -75,6 +78,9 @@ name: "UserCenter",
       else if (this.user.role === 'LIBRARIAN')
         return '管理员'
       else return '不确定'
+    },
+    logout: function () {
+
     }
   },
   mounted() { // load user info at the beginning
@@ -83,7 +89,7 @@ name: "UserCenter",
       return
     }
     this.user = JSON.parse(localStorage.userInfo)
-  }
+  },
 }
 </script>
 

@@ -90,7 +90,7 @@ export default {
       })
       .then(res => {
         if (res.ok) {
-          router.push('/register') // TODO: jump to register page
+          router.push('/login')
         } else {
           alert('填入的信息有问题，请检查后提交')
         }
