@@ -36,7 +36,9 @@
         </p>
       </div>
 
-      <button @click="logout">登出</button>
+      <button class="user-logout" @click="logout">
+        登出
+      </button>
 
       <div class="user-subtitle" v-if="user.role === 'LIBRARIAN'">
         <h2>管理功能</h2>
@@ -140,6 +142,23 @@ main {
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.user-logout {
+  color: white;
+  background-color: rgb(222, 0, 0);
+  font-size: 15px;
+  border: none;
+
+  padding: 5px 15px;
+  margin-top: 20px;
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(177, 0, 4);
   }
 }
 
