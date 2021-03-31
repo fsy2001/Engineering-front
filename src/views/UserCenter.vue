@@ -85,7 +85,7 @@ name: "UserCenter",
       })
       localStorage.removeItem('userLogin')
       localStorage.removeItem('userInfo')
-      router.push('/home')
+      router.push('/')
     }
   },
   mounted() { // load user info at the beginning

@@ -1,7 +1,7 @@
 <template>
   <div class="book-entry-container">
     <div class="book-entry-top">
-      <img src="http://placekitten.com/150/300" alt="" class="book-entry-cover">
+      <img :src="config.imagePath" alt="" class="book-entry-cover">
       <div class="book-entry-meta">
         <div class="book-entry-title">
           {{ config.title }}
